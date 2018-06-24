@@ -21,9 +21,11 @@ public:
 
 		QStyle * varStyle = qApp->style();
 		QStyleOptionButton varDrawData;
+        varDrawData.initFrom(this);
 		varDrawData.rect = QRect{ 10,10,100,30 };
 		varDrawData.text = QStringLiteral("ABC");
-		varStyle->drawControl(QStyle::CE_PushButton, &varDrawData, &varPainter);
+		varDrawData.state |= QStyle::State_MouseOver;
+		varStyle->drawControl(QStyle::CE_PushButton, &varDrawData, &varPainter,this);
 
 		(void)event;
 		//https://blog.csdn.net/liang19890820/article/details/50974059
