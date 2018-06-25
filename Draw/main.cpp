@@ -35,14 +35,28 @@ public:
 
 };
 
+#include "ListView.hpp"
+
 int main(int argc, char *argv[]) {
 	QApplication app(argc, argv);
 
 	MainWindow window;
 	window.show();
 
-	Test test;
-	test.show();
+	ListView view;
+	QStringListModel model;
+	model.setStringList(QStringList{ 
+		QStringLiteral("aaa"),
+		QStringLiteral("bbb"),
+		QStringLiteral("ccc"),
+		QStringLiteral("aaa"),
+		QStringLiteral("bbb"),
+		QStringLiteral("ccc") });
+	view.setModel(&model);
+	view.show();
+
+	//Test test;
+	//test.show();
 
 	return app.exec();
 }
