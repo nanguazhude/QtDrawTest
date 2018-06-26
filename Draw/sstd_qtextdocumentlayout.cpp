@@ -897,7 +897,8 @@ namespace sstd {
 			painter->setRenderHint(QPainter::Antialiasing, false);
 	}
 
-	void QTextDocumentLayoutPrivate::drawFrameDecoration(QPainter *painter,
+	void QTextDocumentLayoutPrivate::drawFrameDecoration(
+		QPainter *painter,
 		QTextFrame *frame,
 		QTextFrameData *fd,
 		const QRectF &clip,

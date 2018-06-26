@@ -45,6 +45,11 @@ int main(int argc, char *argv[]) {
 	QApplication app(argc, argv);
 
 	QTextBrowser x;
+	QTextDocument * document = x.document();
+	qDebug() << typeid(*document).name();
+	document->setDocumentLayout(new sstd::QTextDocumentLayout(document));
+	QAbstractTextDocumentLayout * layout = document->documentLayout();
+	qDebug() << typeid(*layout).name();
 	
 	{
 		QTextCursor varC{ x.document()->rootFrame() };
@@ -197,11 +202,6 @@ int main(int argc, char *argv[]) {
 		x.insertPlainText(QString::fromUtf8(u8R"(zzzzzsdfsjin发生的雷锋精神啦水电费拉说服力的撒沙发搜发货地ask发的开发货款的)"));
 	}
 
-	QTextDocument * document = x.document();
-	qDebug()<< typeid( *document ).name();
-	document->setDocumentLayout(new sstd::QTextDocumentLayout(document));
-	QAbstractTextDocumentLayout * layout = document->documentLayout();
-	qDebug() << typeid(*layout).name();
 	x.show();
 
 
