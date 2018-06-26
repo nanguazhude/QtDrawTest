@@ -41,16 +41,16 @@
 ****************************************************************************/
 
 #include "sstd_qtextdocumentlayout_p.h"
-#include "private/qtextdocument_p.h"
-#include "private/qtextimagehandler_p.h"
-#include "qtexttable.h"
-#include "qtextlist.h"
-#include "private/qtextengine_p.h"
-#include "private/qcssutil_p.h"
-#include "private/qguiapplication_p.h"
-
-#include "private/qabstracttextdocumentlayout_p.h"
-#include "private/qcssparser_p.h"
+#include <private/qtextdocument_p.h>
+#include <private/qtextimagehandler_p.h>
+#include <qtexttable.h>
+#include <qtextlist.h>
+#include <private/qtextengine_p.h>
+#include <private/qcssutil_p.h>
+#include <private/qguiapplication_p.h>
+#include <qdrawutil.h>
+#include <private/qabstracttextdocumentlayout_p.h>
+#include <private/qcssparser_p.h>
 
 #include <qpainter.h>
 #include <qmath.h>
@@ -60,7 +60,7 @@
 #include <qvarlengtharray.h>
 #include <limits.h>
 #include <qbasictimer.h>
-#include "private/qfunctions_p.h"
+#include <private/qfunctions_p.h>
 
 #include <algorithm>
 
@@ -910,29 +910,44 @@ namespace sstd {
 			if (_p_varProperty.isValid() == false) { break; }
 			/*************************************************************/
 			auto draw = [&]() {
+				painter->setRenderHints(
+					QPainter::Antialiasing |
+					QPainter::TextAntialiasing |
+					QPainter::SmoothPixmapTransform |
+					QPainter::HighQualityAntialiasing 
+				);
 				double varMaxWidth = 0.05;
 				{/*获得真正的宽度*/
 					const auto varE = frame->end();
 					auto varP = frame->begin();
-					for (;varP!=varE;++varP) {
+					for (; varP != varE; ++varP) {
 						auto varBlock = varP.currentBlock();
 						if (varBlock.isValid() == false) { continue; }
 						QTextLayout * tlayout = varBlock.layout();
 						if (tlayout == nullptr) { continue; }
 						const auto varLineCount = tlayout->lineCount();
-						for (int i = 0; i < varLineCount;++i) {
-							QTextLine varLine = tlayout->lineAt(i) ;
+						for (int i = 0; i < varLineCount; ++i) {
+							QTextLine varLine = tlayout->lineAt(i);
 							const auto varLineWidth = varLine.naturalTextWidth();
 							if (varLineWidth > varMaxWidth) { varMaxWidth = varLineWidth; }
 						}
-					} 
+					}
 				}
+				QRectF varRect{ rect };
+				varRect.setWidth(varMaxWidth + fd->leftMargin.toReal() + fd->rightMargin.toReal());
 				//qDebug() << varMaxWidth << rect;
-				painter->setBrush(QColor(100,200,222,125));
-				QRectF varRect{rect};
-				varRect.setWidth(varMaxWidth  + fd->leftMargin.toReal() + fd->rightMargin.toReal());
-				painter->drawRect(varRect);
-				
+				painter->setBrush(QColor( 50 , 120 , 222, 125));
+				painter->setPen({ QColor(222,122,123),2 });
+				painter->drawRoundedRect(varRect,10,10);
+				//void qDrawBorderPixmap(QPainter *painter, const QRect &target, const QMargins &margins, const QPixmap &pixmap)
+				//QMargins(int left, int top, int right, int bottom)
+				/*const QMargins varMargin{
+					fd->leftMargin.toInt(),
+					fd->topMargin.toInt(),
+					fd->rightMargin.toInt(),
+					fd->bottomMargin.toInt() };
+				qDrawBorderPixmap(painter, varRect.toRect(), varMargin, QPixmap{});*/
+
 			};
 			/*************************************************************/
 			return draw();
