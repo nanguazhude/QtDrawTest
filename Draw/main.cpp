@@ -88,6 +88,7 @@ int main(int argc, char *argv[]) {
 		QTextFrameFormat varFormat;
 		varFormat.setMargin(10);
 		varFormat.setPadding(0);
+		varFormat.setBorder(0.005);
 		auto f = varC.insertFrame(varFormat);
 		f->setProperty(sstd::dynamic_property_name(), 1);
 		x.setTextCursor(varC);
@@ -106,6 +107,8 @@ int main(int argc, char *argv[]) {
 		varC.movePosition(QTextCursor::End);
 		QTextFrameFormat varFormat;
 		varFormat.setMargin(10);
+		varFormat.setPadding(0);
+		varFormat.setBorder(0.005);
 		auto f = varC.insertFrame(varFormat);
 		f->setProperty(sstd::dynamic_property_name(),1);
 		x.setTextCursor(varC);
@@ -124,6 +127,8 @@ int main(int argc, char *argv[]) {
 		varC.movePosition(QTextCursor::End);
 		QTextFrameFormat varFormat;
 		varFormat.setMargin(10);
+		varFormat.setPadding(0);
+		varFormat.setBorder(0.005);
 		auto f = varC.insertFrame(varFormat);
 		f->setProperty(sstd::dynamic_property_name(), 1);
 		x.setTextCursor(varC);
@@ -142,6 +147,8 @@ int main(int argc, char *argv[]) {
 		varC.movePosition(QTextCursor::End);
 		QTextFrameFormat varFormat;
 		varFormat.setMargin(10);
+		varFormat.setPadding(0);
+		varFormat.setBorder(0.005);
 		auto f = varC.insertFrame(varFormat);
 		f->setProperty(sstd::dynamic_property_name(), 1);
 		x.setTextCursor(varC);
@@ -160,6 +167,8 @@ int main(int argc, char *argv[]) {
 		varC.movePosition(QTextCursor::End);
 		QTextFrameFormat varFormat;
 		varFormat.setMargin(10);
+		varFormat.setPadding(0);
+		varFormat.setBorder(0.005);
 		auto f = varC.insertFrame(varFormat);
 		f->setProperty(sstd::dynamic_property_name(), 1);
 		x.setTextCursor(varC);
@@ -178,6 +187,8 @@ int main(int argc, char *argv[]) {
 		varC.movePosition(QTextCursor::End);
 		QTextFrameFormat varFormat;
 		varFormat.setMargin(10);
+		varFormat.setPadding(0);
+		varFormat.setBorder(0.005);
 		auto f = varC.insertFrame(varFormat);
 		f->setProperty(sstd::dynamic_property_name(), 1);
 		x.setTextCursor(varC);
@@ -196,10 +207,14 @@ int main(int argc, char *argv[]) {
 		varC.movePosition(QTextCursor::End);
 		QTextFrameFormat varFormat;
 		varFormat.setMargin(10);
+		varFormat.setPadding(0);
+		varFormat.setBorder(0.005);
 		auto f = varC.insertFrame(varFormat);
 		f->setProperty(sstd::dynamic_property_name(), 1);
 		x.setTextCursor(varC);
-		x.insertPlainText(QString::fromUtf8(u8R"(zzzzzsdfsjin发生的雷锋精神啦水电费拉说服力的撒沙发搜发货地ask发的开发货款的)"));
+		x.insertPlainText(QString::fromUtf8(u8R"(zzzzzsdfsjin发生的雷锋精神啦水电费
+拉说服力的撒沙发搜发货地ask。
+发的开发货款的)"));
 	}
 
 	x.show();

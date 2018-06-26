@@ -915,7 +915,7 @@ namespace sstd {
 					QPainter::Antialiasing |
 					QPainter::TextAntialiasing |
 					QPainter::SmoothPixmapTransform |
-					QPainter::HighQualityAntialiasing 
+					QPainter::HighQualityAntialiasing
 				);
 				double varMaxWidth = 0.05;
 				{/*获得真正的宽度*/
@@ -937,9 +937,9 @@ namespace sstd {
 				QRectF varRect{ rect };
 				varRect.setWidth(varMaxWidth + fd->leftMargin.toReal() + fd->rightMargin.toReal());
 				//qDebug() << varMaxWidth << rect;
-				painter->setBrush(QColor( 50 , 120 , 222, 125));
+				painter->setBrush(QColor(50, 120, 222, 125));
 				painter->setPen({ QColor(222,122,123),2 });
-				painter->drawRoundedRect(varRect,10,10);
+				painter->drawRoundedRect(varRect, 10, 10);
 				//void qDrawBorderPixmap(QPainter *painter, const QRect &target, const QMargins &margins, const QPixmap &pixmap)
 				//QMargins(int left, int top, int right, int bottom)
 				/*const QMargins varMargin{
