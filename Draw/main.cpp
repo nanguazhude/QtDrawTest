@@ -45,7 +45,158 @@ int main(int argc, char *argv[]) {
 	QApplication app(argc, argv);
 
 	QTextBrowser x;
-	x.insertPlainText("zzzzz");
+	
+	{
+		QTextCursor varC{ x.document()->rootFrame() };
+		varC.movePosition(QTextCursor::End);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(new frame)"));
+	}
+
+	{
+		QTextCursor varC{ x.document() };
+		varC.movePosition(QTextCursor::End);
+		QTextFrameFormat varFormat;
+		varFormat.setMargin(10);
+		varFormat.setPadding(0);
+		auto f = varC.insertFrame(varFormat);
+		f->setProperty(sstd::dynamic_property_name(), 1);
+		x.setTextCursor(varC);
+		{
+			auto varFont = x.font();
+			varFont.setPointSizeF(12);
+			x.setFont(varFont);
+		}
+		x.insertPlainText(QString::fromUtf8(u8R"(zzzzz)"));
+	}
+
+	{
+		QTextCursor varC{ x.document()->rootFrame() };
+		varC.movePosition(QTextCursor::End);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(new frame)"));
+	}
+
+	{
+		QTextCursor varC{ x.document() };
+		varC.movePosition(QTextCursor::End);
+		QTextFrameFormat varFormat;
+		varFormat.setMargin(10);
+		varFormat.setPadding(0);
+		auto f = varC.insertFrame(varFormat);
+		f->setProperty(sstd::dynamic_property_name(), 1);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(zzzzzsdfs)"));
+	}
+
+	{
+		QTextCursor varC{ x.document()->rootFrame() };
+		varC.movePosition(QTextCursor::End);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(new frame)"));
+	}
+
+	{
+		QTextCursor varC{ x.document() };
+		varC.movePosition(QTextCursor::End);
+		QTextFrameFormat varFormat;
+		varFormat.setMargin(10);
+		auto f = varC.insertFrame(varFormat);
+		f->setProperty(sstd::dynamic_property_name(),1);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(zzzzzsdfsjin发生的雷锋精神啦水电费拉说服力的撒沙发搜发货地ask发的开发货款的)"));
+	}
+
+	{
+		QTextCursor varC{ x.document()->rootFrame() };
+		varC.movePosition(QTextCursor::End);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(new frame)"));
+	}
+
+	{
+		QTextCursor varC{ x.document() };
+		varC.movePosition(QTextCursor::End);
+		QTextFrameFormat varFormat;
+		varFormat.setMargin(10);
+		auto f = varC.insertFrame(varFormat);
+		f->setProperty(sstd::dynamic_property_name(), 1);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(zzzzzsdfsjin发生的雷锋精神啦水电费拉说服力的撒沙发搜发货地ask发的开发货款的)"));
+	}
+
+	{
+		QTextCursor varC{ x.document()->rootFrame() };
+		varC.movePosition(QTextCursor::End);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(new frame)"));
+	}
+
+	{
+		QTextCursor varC{ x.document() };
+		varC.movePosition(QTextCursor::End);
+		QTextFrameFormat varFormat;
+		varFormat.setMargin(10);
+		auto f = varC.insertFrame(varFormat);
+		f->setProperty(sstd::dynamic_property_name(), 1);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(zzzzzsdfsjin发生的雷锋精神啦水电费拉说服力的撒沙发搜发货地ask发的开发货款的)"));
+	}
+
+	{
+		QTextCursor varC{ x.document()->rootFrame() };
+		varC.movePosition(QTextCursor::End);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(new frame)"));
+	}
+
+	{
+		QTextCursor varC{ x.document() };
+		varC.movePosition(QTextCursor::End);
+		QTextFrameFormat varFormat;
+		varFormat.setMargin(10);
+		auto f = varC.insertFrame(varFormat);
+		f->setProperty(sstd::dynamic_property_name(), 1);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(zzzzzsdfsjin发生的雷锋精神啦水电费拉说服力的撒沙发搜发货地ask发的开发货款的)"));
+	}
+
+	{
+		QTextCursor varC{ x.document()->rootFrame() };
+		varC.movePosition(QTextCursor::End);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(new frame)"));
+	}
+
+	{
+		QTextCursor varC{ x.document() };
+		varC.movePosition(QTextCursor::End);
+		QTextFrameFormat varFormat;
+		varFormat.setMargin(10);
+		auto f = varC.insertFrame(varFormat);
+		f->setProperty(sstd::dynamic_property_name(), 1);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(zzzzzsdfsjin发生的雷锋精神啦水电费拉说服力的撒沙发搜发货地ask发的开发货款的)"));
+	}
+
+	{
+		QTextCursor varC{ x.document()->rootFrame() };
+		varC.movePosition(QTextCursor::End);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(new frame)"));
+	}
+
+	{
+		QTextCursor varC{ x.document() };
+		varC.movePosition(QTextCursor::End);
+		QTextFrameFormat varFormat;
+		varFormat.setMargin(10);
+		auto f = varC.insertFrame(varFormat);
+		f->setProperty(sstd::dynamic_property_name(), 1);
+		x.setTextCursor(varC);
+		x.insertPlainText(QString::fromUtf8(u8R"(zzzzzsdfsjin发生的雷锋精神啦水电费拉说服力的撒沙发搜发货地ask发的开发货款的)"));
+	}
+
 	QTextDocument * document = x.document();
 	qDebug()<< typeid( *document ).name();
 	document->setDocumentLayout(new sstd::QTextDocumentLayout(document));

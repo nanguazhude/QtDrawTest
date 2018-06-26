@@ -62,7 +62,7 @@ class QTextListFormat;
 class QTextTableCell;
 
 namespace sstd{
-
+	inline const char * dynamic_property_name() { return "text@frame@data"; }
 class QTextDocumentLayoutPrivate;
 class QTextDocumentLayout : public QAbstractTextDocumentLayout
 {
