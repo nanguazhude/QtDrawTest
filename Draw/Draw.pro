@@ -44,3 +44,6 @@ HEADERS += \
 
 FORMS += \
         MainWindow.ui
+
+SOURCES +=sstd_qtextdocumentlayout.cpp
+HEADERS +=sstd_qtextdocumentlayout_p.h

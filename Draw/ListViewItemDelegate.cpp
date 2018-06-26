@@ -31,6 +31,8 @@ public:
 		const QStyleOptionViewItem &option,
 		const QModelIndex &index) const {
 
+		qstyleoption_cast<const QStyleOptionViewItem *>(&option);
+
 		painter->setRenderHints(
 			QPainter::Antialiasing |
 			QPainter::TextAntialiasing |

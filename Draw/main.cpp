@@ -37,23 +37,37 @@ public:
 
 #include "ListView.hpp"
 
+#include<QtGui/private/qtextdocumentlayout_p.h>
+
+#include "sstd_qtextdocumentlayout_p.h"
+
 int main(int argc, char *argv[]) {
 	QApplication app(argc, argv);
 
-	MainWindow window;
-	window.show();
+	QTextBrowser x;
+	x.insertPlainText("zzzzz");
+	QTextDocument * document = x.document();
+	qDebug()<< typeid( *document ).name();
+	document->setDocumentLayout(new sstd::QTextDocumentLayout(document));
+	QAbstractTextDocumentLayout * layout = document->documentLayout();
+	qDebug() << typeid(*layout).name();
+	x.show();
 
-	ListView view;
-	QStringListModel model;
-	model.setStringList(QStringList{ 
-		QStringLiteral("aaa"),
-		QStringLiteral("bbb"),
-		QStringLiteral("ccc"),
-		QStringLiteral("aaa"),
-		QStringLiteral("bbb"),
-		QStringLiteral("ccc") });
-	view.setModel(&model);
-	view.show();
+
+	//MainWindow window;
+	//window.show();
+
+	//ListView view;
+	//QStringListModel model;
+	//model.setStringList(QStringList{ 
+	//	QStringLiteral("aaa"),
+	//	QStringLiteral("bbb"),
+	//	QStringLiteral("ccc"),
+	//	QStringLiteral("aaa"),
+	//	QStringLiteral("bbb"),
+	//	QStringLiteral("ccc") });
+	//view.setModel(&model);
+	//view.show();
 
 	//Test test;
 	//test.show();
