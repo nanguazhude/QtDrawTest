@@ -47,3 +47,6 @@ FORMS += \
 
 SOURCES +=sstd_qtextdocumentlayout.cpp
 HEADERS +=sstd_qtextdocumentlayout_p.h
+
+SOURCES +=GifTextObject.cpp
+HEADERS +=GifTextObject.hpp
